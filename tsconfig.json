@@ -1,0 +1,43 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": true, // 装饰器开启
+    "target": "es6", // 指定 ECMAScript 目标版本
+    "baseUrl": "./", // 用于解析非相对模块名称的基目录
+    "lib": [ // 指定要包含在编译中的库文件
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "paths": { // 模块名到基于 baseUrl 的路径映射的列表
+      "@/*": [
+        "src/*"
+      ],
+      "./*": [
+        "/*"
+      ]
+    },
+    "checkJs": true, // 报告 javascript 文件中的错误
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true, // 允许从没有设置默认导出的模块中默认导入。
+    "strict": true, // 启用所有严格类型检查选项
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true, // 报告 switch 语句的 fallthrough 错误。（即，不允许 switch 的 case 语句贯穿）
+    "module": "esnext", // 指定使用模块: 'commonjs', 'amd', 'system', 'umd' or 'es2015'
+    "moduleResolution": "node", // 选择模块解析策略： 'node' (Node.js) or 'classic' (TypeScript pre-1.6)
+    "resolveJsonModule": true,
+    "isolatedModules": true, // 将每个文件做为单独的模块 （与 'ts.transpileModule' 类似）.
+    "noEmit": true, // 不生成输出文件
+    "jsx": "react-jsx",
+    "removeComments": true // 编译 js 的时候，删除掉注释
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "node_modules",
+    "config",
+    "dist"
+  ]
+}

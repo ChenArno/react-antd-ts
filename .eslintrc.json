@@ -1,0 +1,36 @@
+{
+	// "parser": "babel-eslint",
+	"extends": "react-app",
+	"rules": {
+		"jsx-a11y/anchor-is-valid": "off", // a标签 href
+		"no-script-url": "off", // 关闭a标签href无url的告警
+		"jsx-a11y/anchor-has-content": "off", // 关闭jsx a标签无内容的告警
+		"react-hooks/exhaustive-deps": "off", // React Hook useEffect has a missing dependency:
+		"no-object-literal-type-assertion": 0, //禁止object出现在类型断言表达式中
+		"no-unnecessary-type-assertion": 0, //如果类型断言没有改变表达式的类型就发出警告
+		"react/jsx-filename-extension": [
+			1,
+			{
+				"extensions": [
+					".js",
+					".ts",
+					".jsx",
+					".tsx"
+				]
+			}
+		]
+	},
+	"parserOptions": {
+		"ecmaFeatures": {
+			"experimentalObjectRestSpread": true
+		}
+	},
+	// eslint-import-resolver-webpack 别名校验配置
+	"settings": {
+		"import/resolver": {
+			"webpack": {
+				"config": "./config/webpack.config.js"
+			}
+		}
+	}
+}
