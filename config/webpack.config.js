@@ -66,10 +66,10 @@ const useTailwind = fs.existsSync(
 );
 
 // 注入package信息
-const { version, description } = require('../package.json')
+const { homepage, version, description } = require('../package.json')
 process.env.REACT_APP_VERSION = version
 process.env.REACT_APP_DESC = description
-// process.env.REACT_APP_HOMEPAGE = homepage
+process.env.REACT_APP_HOMEPAGE = homepage
 
 // Get the path to the uncompiled service worker (if it exists).
 const swSrc = paths.swSrc;

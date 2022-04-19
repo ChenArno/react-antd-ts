@@ -14,8 +14,10 @@
   },
   "scripts": {
     "start": "node scripts/start.js",
-    "build": "node scripts/build.js",
-    "serve": "serve -s build",
+    "build": "cross-env GENERATE_SOURCEMAP=false scripts/build.js",
+    "server": "node scripts/server.js",
+    "upload": "cross-env NODE_ENV=production node scripts/pack.js",
+    "pack": "pnpm run build && pnpm run upload",
     "test": "node scripts/test.js"
   },
   "dependencies": {
@@ -30,6 +32,7 @@
     "@types/react": "^18.0.5",
     "@types/react-dom": "^18.0.1",
     "antd": "^4.19.5",
+    "axios": "^0.26.1",
     "babel-jest": "^27.4.2",
     "babel-loader": "^8.2.3",
     "babel-plugin-named-asset-import": "^0.3.8",
@@ -55,6 +58,7 @@
     "jest-resolve": "^27.4.2",
     "jest-watch-typeahead": "^1.0.0",
     "mini-css-extract-plugin": "^2.4.5",
+    "nprogress": "^0.2.0",
     "postcss": "^8.4.4",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-loader": "^6.2.1",
@@ -89,9 +93,15 @@
     "@babel/plugin-proposal-decorators": "^7.17.9",
     "antd-dayjs-webpack-plugin": "^1.0.6",
     "babel-plugin-import": "^1.13.5",
+    "chalk": "4.1.0",
+    "cross-env": "^7.0.3",
+    "express": "^4.17.3",
     "less": "^4.1.2",
     "less-loader": "6.1.0",
-    "react-hot-loader": "^4.13.0"
+    "ora": "4.0.4",
+    "react-hot-loader": "^4.13.0",
+    "scp2": "^0.5.0",
+    "ssh2": "^1.9.0"
   },
   "browserslist": {
     "production": [
